@@ -2,6 +2,7 @@ vim.lsp.enable({
     "lua_ls",
     "clangd",
     "agl_ls"
+    "pyright"
 })
 
 vim.lsp.inlay_hint.enable()
