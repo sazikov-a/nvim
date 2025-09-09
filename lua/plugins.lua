@@ -8,7 +8,8 @@ vim.pack.add({
     { src = "https://github.com/windwp/nvim-autopairs" },
     { src = "https://github.com/j-hui/fidget.nvim" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-    { src = "https://github.com/sazikov-a/agl.nvim" }
+    { src = "https://github.com/sazikov-a/agl.nvim" },
+    { src = "https://github.com/sazikov-a/arc.nvim" }
 })
 
 require "nvim-autopairs".setup()
@@ -35,4 +36,6 @@ require "nvim-treesitter.configs".setup({
         additional_vim_regex_highlighting = false,
     }
 })
+
+require "arc".setup()
 
