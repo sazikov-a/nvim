@@ -1,8 +1,8 @@
 vim.pack.add({
+    { src = "https://github.com/shaunsingh/nord.nvim" },
     { src = "https://github.com/echasnovski/mini.nvim" },
     { src = "https://github.com/saghen/blink.cmp", version = "v1.6.0" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
-    { src = "https://github.com/EdenEast/nightfox.nvim" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/windwp/nvim-autopairs" },
