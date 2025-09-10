@@ -32,6 +32,7 @@ vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to References' })
 
 vim.keymap.set('n', '<leader>f', ':Pick files<CR>')
 vim.keymap.set('n', '<leader>g', ':Pick grep_live<CR>')
+vim.keymap.set('n', '<leader>ag', ':Pick arc_grep_live<CR>')
 
 vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
