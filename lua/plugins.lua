@@ -9,7 +9,8 @@ vim.pack.add({
     { src = "https://github.com/j-hui/fidget.nvim" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
     { src = "https://github.com/sazikov-a/agl.nvim" },
-    { src = "https://github.com/sazikov-a/arc.nvim" }
+    { src = "https://github.com/sazikov-a/arc.nvim" },
+    { src = "https://github.com/alec-gibson/nvim-tetris" }
 })
 
 require "nvim-autopairs".setup()
@@ -30,12 +31,11 @@ require "blink.cmp".setup({
 require "fidget".setup()
 require "telescope".load_extension("fidget")
 
-require "nvim-treesitter.configs".setup({
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    }
-})
-
 require "arc".setup()
 
+require "nvim-treesitter.configs".setup({
+    ensure_installed = { "c", "cpp", "lua", "vim", "python", "go"},
+    highlight = {
+        enable = true
+    }
+})
