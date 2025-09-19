@@ -32,7 +32,7 @@ vim.lsp.config('clangd', {
         'clangd',
         '--background-index',
         '--clang-tidy',
-        '--header-insertion=never',
+        '--header-insertion=iwys',
         '--completion-style=detailed',
         '-j=56',
         '--enable-config',
