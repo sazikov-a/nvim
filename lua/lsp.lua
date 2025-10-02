@@ -1,3 +1,13 @@
+local uv = require('luv')
+local cpus = uv.available_parallelism()
+
+local cpu_to_keep = 8
+if cpus <= 12 then
+    cpu_to_keep = 2
+elseif cpus < 32 then
+    cpu_to_keep = 4
+end
+
 vim.lsp.enable({
     "lua_ls",
     "clangd",
@@ -27,14 +37,12 @@ vim.lsp.config('lua_ls', {
 
 vim.lsp.config('clangd', {
     cmd = {
-        'ya',
-        'tool',
         'clangd',
         '--background-index',
         '--clang-tidy',
-        '--header-insertion=iwys',
+        '--header-insertion=never',
         '--completion-style=detailed',
-        '-j=56',
+        '-j='..(cpus-cpu_to_keep),
         '--enable-config',
         '--pretty',
         '--log=info',
