@@ -26,7 +26,12 @@ require "mini.comment".setup({
 })
 require "blink.cmp".setup({
     keymap = { preset = "enter" },
-    completion = { documentation = { auto_show = true } }
+    completion = { documentation = { auto_show = true } },
+    sources = {
+        default = { "lsp", "buffer" },
+        lsp = { priority = 100 },
+        buffer = { priority = 50 }
+    }
 })
 
 require "fidget".setup()
