@@ -10,6 +10,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
     { src = "https://github.com/sazikov-a/agl.nvim" },
     { src = "https://github.com/sazikov-a/arc.nvim" },
+    { src = "https://github.com/sazikov-a/yamake.nvim"},
     { src = "https://github.com/alec-gibson/nvim-tetris" },
     { src = "https://github.com/folke/tokyonight.nvim" }
 })
@@ -45,3 +46,6 @@ require "nvim-treesitter.configs".setup({
         enable = true
     }
 })
+
+require "yamake".setup()
+
