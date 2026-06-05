@@ -12,7 +12,8 @@ vim.pack.add({
     { src = "https://github.com/sazikov-a/arc.nvim" },
     { src = "https://github.com/sazikov-a/yamake.nvim"},
     { src = "https://github.com/alec-gibson/nvim-tetris" },
-    { src = "https://github.com/folke/tokyonight.nvim" }
+    { src = "https://github.com/folke/tokyonight.nvim" },
+    { src = "https://github.com/sazikov-a/infractl.nvim" }
 })
 
 require "nvim-autopairs".setup()
@@ -49,3 +50,4 @@ require "nvim-treesitter.configs".setup({
 
 require "yamake".setup()
 
+require "infractl".setup()
