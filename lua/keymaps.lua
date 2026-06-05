@@ -39,3 +39,6 @@ vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<
 vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', opts)
 
+vim.keymap.set('n', '<leader>pu', function()
+    vim.pack.update()
+end, { desc = "update plugins" })
