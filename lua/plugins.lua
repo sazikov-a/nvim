@@ -14,7 +14,8 @@ vim.pack.add({
     { src = "https://github.com/alec-gibson/nvim-tetris" },
     { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/sazikov-a/infractl.nvim" },
-    { src = "https://github.com/sazikov-a/claude.nvim" }
+    { src = "https://github.com/sazikov-a/claude.nvim" },
+    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }
 })
 
 require "nvim-autopairs".setup()
@@ -54,3 +55,20 @@ require "yamake".setup()
 require "infractl".setup()
 
 require "claude".setup()
+
+require "render-markdown".setup({
+    completions = {
+        lsp = {
+            enabled = true
+        }
+    },
+    heading = {
+        sign = false,
+        position = 'inline',
+        width = 'block',
+        left_margin = 0.5,
+        left_pad = 0.2,
+        right_pad = 0.2,
+        icons = { '' }
+    }
+})
