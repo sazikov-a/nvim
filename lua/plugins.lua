@@ -43,7 +43,30 @@ require "telescope".load_extension("fidget")
 require "arc".setup()
 
 require "nvim-treesitter.configs".setup({
-    ensure_installed = { "c", "cpp", "lua", "vim", "python", "go", "markdown", "yaml" },
+    ensure_installed = {
+        "bash",
+        "c",
+        "cpp",
+        "cmake",
+        "make",
+        "json",
+        "jinja",
+        "jinja_inline",
+        "nginx",
+        "ninja",
+        "proto",
+        "lua",
+        "vim",
+        "vimdoc",
+        "python",
+        "go",
+        "markdown",
+        "markdown_inline",
+        "yaml",
+        "query",
+    },
+    auto_install = true,
+    sync_install = false,
     highlight = {
         enable = true
     }
