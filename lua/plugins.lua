@@ -14,7 +14,6 @@ vim.pack.add({
     { src = "https://github.com/alec-gibson/nvim-tetris" },
     { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/sazikov-a/infractl.nvim" },
-    { src = "https://github.com/sazikov-a/claude.nvim" },
     { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }
 })
 
@@ -44,7 +43,7 @@ require "telescope".load_extension("fidget")
 require "arc".setup()
 
 require "nvim-treesitter.configs".setup({
-    ensure_installed = { "c", "cpp", "lua", "vim", "python", "go" },
+    ensure_installed = { "c", "cpp", "lua", "vim", "python", "go", "markdown", "yaml" },
     highlight = {
         enable = true
     }
@@ -53,8 +52,6 @@ require "nvim-treesitter.configs".setup({
 require "yamake".setup()
 
 require "infractl".setup()
-
-require "claude".setup()
 
 require "render-markdown".setup({
     completions = {
