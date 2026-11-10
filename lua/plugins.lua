@@ -1,3 +1,17 @@
+vim.api.nvim_create_autocmd(
+  'PackChanged',
+  {
+    callback = function(ev)
+      local name, kind = ev.data.spec.name, ev.data.kind
+      if name == 'avante.nvim' and (kind == 'install' or kind == 'update') then
+        -- compile avante rust libraries yourself
+        vim.system({ 'make' }, { cwd = ev.data.path }):wait()
+        -- or restart neovim and call `:AvanteBuild` to download prebuilt libraries
+      end
+    end
+  }
+)
+
 vim.pack.add({
     { src = "https://github.com/shaunsingh/nord.nvim" },
     { src = "https://github.com/echasnovski/mini.nvim" },
@@ -14,8 +28,25 @@ vim.pack.add({
     { src = "https://github.com/alec-gibson/nvim-tetris" },
     { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/sazikov-a/infractl.nvim" },
-    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }
-})
+    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+    {
+            src='https://github.com/avante-corp/avante.nvim',
+            version = "v0.5.0",
+
+            -- Deps
+            'https://github.com/nvim-lua/plenary.nvim',
+            'https://github.com/MunifTanjim/nui.nvim',
+            'https://github.com/ColinKennedy/mega.logging',
+            'https://github.com/ColinKennedy/mega.cmdparse',
+
+            'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+            'https://github.com/hrsh7th/nvim-cmp',
+            'https://github.com/nvim-tree/nvim-web-devicons',
+            'https://github.com/HakonHarnes/img-clip.nvim',
+            'https://github.com/folke/snacks.nvim' 
+        }
+    }
+)
 
 require "nvim-autopairs".setup()
 require "mini.pick".setup()
@@ -92,3 +123,5 @@ require "render-markdown".setup({
         icons = { '' }
     }
 })
+
+require "avante".setup({})
