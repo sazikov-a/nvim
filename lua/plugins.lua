@@ -28,25 +28,8 @@ vim.pack.add({
     { src = "https://github.com/alec-gibson/nvim-tetris" },
     { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/sazikov-a/infractl.nvim" },
-    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
-    {
-            src='https://github.com/avante-corp/avante.nvim',
-            version = "v0.5.0",
-
-            -- Deps
-            'https://github.com/nvim-lua/plenary.nvim',
-            'https://github.com/MunifTanjim/nui.nvim',
-            'https://github.com/ColinKennedy/mega.logging',
-            'https://github.com/ColinKennedy/mega.cmdparse',
-
-            'https://github.com/MeanderingProgrammer/render-markdown.nvim',
-            'https://github.com/hrsh7th/nvim-cmp',
-            'https://github.com/nvim-tree/nvim-web-devicons',
-            'https://github.com/HakonHarnes/img-clip.nvim',
-            'https://github.com/folke/snacks.nvim' 
-        }
-    }
-)
+    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }
+})
 
 require "nvim-autopairs".setup()
 require "mini.pick".setup()
@@ -123,5 +106,3 @@ require "render-markdown".setup({
         icons = { '' }
     }
 })
-
-require "avante".setup({})
